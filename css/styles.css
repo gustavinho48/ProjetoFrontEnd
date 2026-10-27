@@ -1,0 +1,379 @@
+﻿/* ==========================================================================
+   PROJETO: CulturaBrasil - Portal de Tradicoes e Turismo Regional
+   AUTORES: Arthur e Equipe | Disciplina: DFEW.08 - Front-End para Web
+   UNIVERSIDADE POSITIVO | Professor: Fabricio Olivo
+   ========================================================================== */
+
+:root {
+    --primary-color: #0b6e4f;
+    --primary-hover: #08523b;
+    --secondary-color: #e3a018;
+    --accent-blue: #1d7874;
+    --bg-light: #f4f6f8;
+    --text-dark: #1f2937;
+    --card-bg-light: #ffffff;
+    --card-border-light: rgba(0, 0, 0, 0.08);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12);
+    --transition-base: all 0.25s ease-in-out;
+}
+
+[data-theme="dark"] {
+    --bg-light: #0f1416;
+    --text-dark: #e5e7eb;
+    --card-bg-light: #182023;
+    --card-border-light: rgba(255, 255, 255, 0.08);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #0d1315 !important;
+    color: #9ca3af !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--card-border-light);
+    transition: var(--transition-base);
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(20, 26, 30, 0.95) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    color: var(--primary-color) !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.5rem 0.85rem !important;
+    border-radius: 0.375rem;
+    transition: var(--transition-base);
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    background-color: rgba(11, 110, 79, 0.08);
+    transform: translateY(-1px);
+}
+
+.nav-link.active {
+    color: var(--primary-color) !important;
+    font-weight: 700;
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--card-border-light);
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background-color: #182023;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .dropdown-item {
+    color: #e5e7eb;
+}
+
+[data-theme="dark"] .dropdown-item:hover {
+    background-color: rgba(11, 110, 79, 0.25);
+    color: #ffffff;
+}
+
+.card {
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--card-border-light);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .card {
+    background-color: var(--card-bg-light);
+    border-color: var(--card-border-light);
+    color: var(--text-dark);
+}
+
+.card-img-top {
+    height: 190px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, rgba(11, 110, 79, 0.92) 0%, rgba(29, 120, 116, 0.88) 100%), url('../images/praia-brasil.jpg') center/cover no-repeat;
+    color: #ffffff;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.hero-banner h1 {
+    font-size: 2.25rem;
+    letter-spacing: -0.02em;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+}
+
+.section-title.text-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.flex-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: space-between;
+}
+
+.flex-card-item {
+    flex: 1 1 calc(33.333% - 1.25rem);
+    min-width: 260px;
+}
+
+.media-player-wrapper {
+    background: var(--card-bg-light);
+    border: 1px solid var(--card-border-light);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.media-player-wrapper video,
+.media-player-wrapper audio {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.badge-tag {
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 50rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-control,
+.form-select {
+    border-radius: 0.5rem;
+    border: 1.5px solid #d1d5db;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+    transition: var(--transition-base);
+    background-color: var(--card-bg-light);
+    color: var(--text-dark);
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: #9ca3af;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(11, 110, 79, 0.2);
+    outline: none;
+}
+
+.form-control:invalid:focus {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.2);
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select {
+    background-color: #1f282c;
+    border-color: #374151;
+    color: #f3f4f6;
+}
+
+[data-theme="dark"] .form-control:hover,
+[data-theme="dark"] .form-select:hover {
+    border-color: #6b7280;
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 0.25rem rgba(16, 185, 129, 0.25);
+    background-color: #1f282c;
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.5rem 1.15rem;
+    border-radius: 0.5rem;
+    transition: var(--transition-base);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(11, 110, 79, 0.25);
+}
+
+.table-custom {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.table-custom th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 0.85rem 1rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.table-custom td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--card-border-light);
+    background-color: var(--card-bg-light);
+    color: var(--text-dark);
+}
+
+.table-custom tr:last-child td {
+    border-bottom: none;
+}
+
+.table-custom tr:hover td {
+    background-color: rgba(11, 110, 79, 0.04);
+}
+
+[data-theme="dark"] .table-custom tr:hover td {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+#saudacaoBanner {
+    background: linear-gradient(135deg, rgba(11, 110, 79, 0.08) 0%, rgba(227, 160, 24, 0.08) 100%);
+    border: 1px solid rgba(11, 110, 79, 0.2);
+}
+
+[data-theme="dark"] #saudacaoBanner {
+    background: linear-gradient(135deg, rgba(11, 110, 79, 0.15) 0%, rgba(227, 160, 24, 0.15) 100%);
+    border-color: rgba(11, 110, 79, 0.35);
+}
+
+#navUserBadge {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        padding: 2rem 1.25rem;
+    }
+    .hero-banner h1 {
+        font-size: 1.75rem;
+    }
+    .grid-gallery {
+        grid-template-columns: 1fr;
+    }
+    .flex-card-item {
+        flex: 1 1 100%;
+    }
+    .table-responsive-custom {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-banner h1 {
+        font-size: 2.75rem;
+    }
+    .card-img-top {
+        height: 200px;
+    }
+}

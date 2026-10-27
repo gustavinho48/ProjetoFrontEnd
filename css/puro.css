@@ -1,0 +1,384 @@
+﻿/* ==========================================================================
+   PROJETO: CulturaBrasil - Modulo Vanilla (CSS Puro sem Frameworks)
+   AUTORES: Arthur e Equipe | Disciplina: DFEW.08 - Front-End para Web
+   UNIVERSIDADE POSITIVO | Professor: Fabricio Olivo
+   ========================================================================== */
+
+:root {
+    --puro-primary: #0b6e4f;
+    --puro-primary-hover: #08523b;
+    --puro-accent: #e3a018;
+    --puro-bg: #f8fafc;
+    --puro-surface: #ffffff;
+    --puro-text: #1e293b;
+    --puro-text-muted: #64748b;
+    --puro-border: #e2e8f0;
+    --puro-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --puro-radius: 8px;
+}
+
+[data-theme="dark"] {
+    --puro-bg: #090d0f;
+    --puro-surface: #141c1f;
+    --puro-text: #f1f5f9;
+    --puro-text-muted: #94a3b8;
+    --puro-border: #243036;
+    --puro-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--puro-bg);
+    color: var(--puro-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.puro-navbar {
+    background-color: var(--puro-surface);
+    border-bottom: 2px solid var(--puro-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--puro-shadow);
+}
+
+.puro-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.puro-brand {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--puro-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.puro-nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.puro-nav-item a {
+    color: var(--puro-text);
+    text-decoration: none;
+    padding: 0.5rem 0.85rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: var(--puro-radius);
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.puro-nav-item a:hover {
+    color: #ffffff;
+    background-color: var(--puro-primary);
+    transform: translateY(-2px);
+}
+
+.puro-nav-item a.active {
+    background-color: var(--puro-primary);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.puro-external-badge {
+    font-size: 0.7rem;
+    background-color: var(--puro-accent);
+    color: #000000;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 0.25rem;
+}
+
+.puro-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.puro-badge {
+    background-color: var(--puro-primary);
+    color: #ffffff;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.puro-theme-btn {
+    background-color: transparent;
+    border: 1px solid var(--puro-border);
+    color: var(--puro-text);
+    padding: 0.45rem 0.8rem;
+    border-radius: var(--puro-radius);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.puro-theme-btn:hover {
+    border-color: var(--puro-primary);
+    color: var(--puro-primary);
+}
+
+.puro-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    flex: 1 0 auto;
+    width: 100%;
+}
+
+.puro-banner {
+    background: linear-gradient(135deg, var(--puro-primary) 0%, #155e75 100%);
+    color: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: var(--puro-shadow);
+}
+
+.puro-banner h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.puro-banner p {
+    font-size: 1.05rem;
+    max-width: 800px;
+    opacity: 0.95;
+}
+
+.puro-badge-vanilla {
+    display: inline-block;
+    background-color: var(--puro-accent);
+    color: #1a1a1a;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.puro-card {
+    background-color: var(--puro-surface);
+    border: 1px solid var(--puro-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--puro-shadow);
+}
+
+.puro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.puro-grid-item {
+    background-color: var(--puro-surface);
+    border: 1px solid var(--puro-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.puro-grid-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.puro-table-wrapper {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    border: 1px solid var(--puro-border);
+}
+
+.puro-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: var(--puro-surface);
+}
+
+.puro-table th {
+    background-color: var(--puro-primary);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 0.95rem;
+}
+
+.puro-table td {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid var(--puro-border);
+    font-size: 0.95rem;
+}
+
+.puro-table tbody tr:nth-child(even) {
+    background-color: rgba(11, 110, 79, 0.03);
+}
+
+[data-theme="dark"] .puro-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.puro-table tbody tr:hover {
+    background-color: rgba(11, 110, 79, 0.08);
+}
+
+.puro-filter-bar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.puro-input,
+.puro-select {
+    padding: 0.6rem 0.9rem;
+    border-radius: var(--puro-radius);
+    border: 1.5px solid var(--puro-border);
+    background-color: var(--puro-surface);
+    color: var(--puro-text);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.puro-input:hover,
+.puro-select:hover {
+    border-color: #94a3b8;
+}
+
+.puro-input:focus,
+.puro-select:focus {
+    border-color: var(--puro-primary);
+    box-shadow: 0 0 0 3px rgba(11, 110, 79, 0.15);
+}
+
+.puro-btn {
+    background-color: var(--puro-primary);
+    color: #ffffff;
+    border: none;
+    padding: 0.65rem 1.25rem;
+    border-radius: var(--puro-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.puro-btn:hover {
+    background-color: var(--puro-primary-hover);
+    transform: translateY(-1px);
+}
+
+.puro-btn-outline {
+    background-color: transparent;
+    border: 1.5px solid var(--puro-primary);
+    color: var(--puro-primary);
+}
+
+.puro-btn-outline:hover {
+    background-color: var(--puro-primary);
+    color: #ffffff;
+}
+
+.puro-footer {
+    background-color: #0b1114;
+    color: #94a3b8;
+    padding: 2.5rem 1.5rem;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.puro-footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.puro-footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.puro-footer a:hover {
+    color: var(--puro-accent);
+}
+
+@media (max-width: 768px) {
+    .puro-nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .puro-nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .puro-nav-item {
+        width: 100%;
+    }
+    .puro-nav-item a {
+        display: block;
+        width: 100%;
+    }
+    .puro-banner {
+        padding: 1.75rem 1.25rem;
+    }
+    .puro-banner h1 {
+        font-size: 1.6rem;
+    }
+    .puro-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .puro-footer-content {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 992px) {
+    .puro-banner h1 {
+        font-size: 2.5rem;
+    }
+}
