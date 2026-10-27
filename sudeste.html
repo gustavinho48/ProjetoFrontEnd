@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Região Sudeste | CulturaBrasil</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .sudeste-accent {
+            border-left: 4px solid #0d6efd;
+            padding-left: 0.75rem;
+        }
+        .prato-card {
+            background-color: var(--card-bg-light);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .prato-card:hover {
+            transform: translateY(-2px);
+            border-color: #0d6efd !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <span style="font-size: 1.4rem;">🇧🇷</span> CulturaBrasil
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Regiões</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="norte.html">Região Norte</a></li>
+                                <li><a class="dropdown-item" href="nordeste.html">Região Nordeste</a></li>
+                                <li><a class="dropdown-item" href="centro-oeste.html">Região Centro-Oeste</a></li>
+                                <li><a class="dropdown-item active" href="sudeste.html">Região Sudeste</a></li>
+                                <li><a class="dropdown-item" href="sul.html">Região Sul</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="diario.html">Diário Cultural</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria & Mídia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="estatisticas.html">Estatísticas (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown">Fontes Externas</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> W3C Standards</a></li>
+                                <li><a class="dropdown-item" href="http://portal.iphan.gov.br/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IPHAN</a></li>
+                                <li><a class="dropdown-item" href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/territorio/brasil.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IBGE Educa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <span id="navUserBadge" class="badge bg-success d-none">Visitante</span>
+                        <span class="badge bg-secondary p-2">Explorações: <span class="contador-exploracoes-valor">0</span></span>
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggleBtn" type="button" title="Alternar Modo Claro/Escuro">
+                            <i class="bi bi-moon-fill" id="themeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                <li class="breadcrumb-item"><a href="#">Regiões</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Região Sudeste</li>
+            </ol>
+        </nav>
+
+        <section class="p-4 mb-4 rounded-3 shadow-sm" style="background: linear-gradient(135deg, rgba(13, 110, 253, 0.12) 0%, rgba(102, 16, 242, 0.05) 100%); border: 1px solid rgba(13, 110, 253, 0.2);">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <span class="badge bg-primary mb-2">Espírito Santo &bull; Minas Gerais &bull; Rio de Janeiro &bull; São Paulo</span>
+                    <h1 class="fw-bold mb-2">Região Sudeste: Metrópoles, Barroco e Samba</h1>
+                    <p class="text-secondary mb-0">
+                        Polo econômico e cultural mais populoso do Brasil, o Sudeste une a vanguarda das artes e do design à tradição secular das vilas coloniais de Minas, ao nascimento da Bossa Nova e ao maior espetáculo a céu aberto do planeta no Rio de Janeiro.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="diario.html" class="btn btn-primary fw-bold">
+                        <i class="bi bi-journal-plus me-1"></i> Adicionar Nota no Diário
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title sudeste-accent">Tradições Vivas e Patrimônios da Humanidade</h2>
+            <div class="row g-4">
+                <article class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/carnaval.jpg" class="card-img-top" alt="Escolas de samba no Sambódromo">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-primary">Samba e Carnaval Carioca</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                Nascido nas tias baianas da Pequena África no Rio, o samba desabrochou nas escolas de samba e nos blocos de rua, exportando a alegria, a batucada e a poesia do Brasil para o mundo.
+                            </p>
+                            <a href="diario.html" class="btn btn-outline-primary btn-sm mt-2">
+                                <i class="bi bi-bookmark-plus me-1"></i> Salvar Roteiro
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="p-3 bg-body-tertiary border-bottom text-center">
+                            <i class="bi bi-bank2 text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-primary">Barroco Mineiro de Ouro Preto</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                Esculpido no ápice do ciclo do ouro por mestres como Aleijadinho e Mestre Ataíde, Ouro Preto foi a primeira cidade brasileira declarada Patrimônio Mundial da UNESCO.
+                            </p>
+                            <a href="diario.html" class="btn btn-outline-primary btn-sm mt-2">
+                                <i class="bi bi-bookmark-plus me-1"></i> Salvar Roteiro
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="p-3 bg-body-tertiary border-bottom text-center">
+                            <i class="bi bi-vinyl text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-primary">Bossa Nova e Vanguarda</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                Movimento que revolucionou a harmonia musical global nos anos 1950 e 1960 pelas mãos de Tom Jobim e Vinicius de Moraes nas praias de Ipanema e Copacabana.
+                            </p>
+                            <a href="diario.html" class="btn btn-outline-primary btn-sm mt-2">
+                                <i class="bi bi-bookmark-plus me-1"></i> Salvar Roteiro
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="card p-4 shadow-sm mb-5">
+            <h2 class="h5 fw-bold mb-3 sudeste-accent">Culinária Típica do Sudeste</h2>
+            <div class="row g-3 text-center">
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-circle-fill text-primary fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Pão de Queijo Mineiro</strong>
+                        <small class="text-secondary">Feito com polvilho azedo e queijo curado da Serra da Canastra assado até dourar.</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-fire text-primary fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Feijoada Completa</strong>
+                        <small class="text-secondary">Prato festivo por excelência acompanhado de couve à mineira, torresmo, farofa e laranja.</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-water text-primary fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Moqueca Capixaba</strong>
+                        <small class="text-secondary">Cozida na panela de barro autêntica de Goiabeiras, com tintura de urucum e sem azeite de dendê.</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-egg-fried text-primary fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Virado à Paulista</strong>
+                        <small class="text-secondary">Prato histórico dos bandeirantes com tutu de feijão, bisteca de porco, couve e ovo frito.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="d-flex justify-content-between align-items-center flex-wrap gap-2 pt-3 border-top">
+            <a href="centro-oeste.html" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Anterior: Centro-Oeste
+            </a>
+            <a href="sul.html" class="btn btn-primary">
+                Próxima: Região Sul <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </aside>
+    </main>
+
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span class="small">&copy; 2026 CulturaBrasil &bull; Região Sudeste &bull; Universidade Positivo</span>
+                <span class="small"><a href="galeria.html">Galeria</a> | <a href="diario.html">Diário</a> | <a href="sobre.html">Sobre</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

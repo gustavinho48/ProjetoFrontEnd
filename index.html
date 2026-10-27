@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CulturaBrasil | Tradições, Arte e Turismo das 5 Regiões</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #bannerDestaqueHome {
+            border-left: 5px solid var(--secondary-color);
+        }
+        .selo-portal {
+            background-color: rgba(11, 110, 79, 0.12);
+            color: var(--primary-color);
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 0.85rem;
+        }
+        .external-link-hover {
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .external-link-hover:hover {
+            color: var(--secondary-color) !important;
+            transform: translateX(3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top shadow-sm" id="mainNavbar">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <span style="font-size: 1.4rem;">🇧🇷</span> CulturaBrasil
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Regiões
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="norte.html">Região Norte</a></li>
+                                <li><a class="dropdown-item" href="nordeste.html">Região Nordeste</a></li>
+                                <li><a class="dropdown-item" href="centro-oeste.html">Região Centro-Oeste</a></li>
+                                <li><a class="dropdown-item" href="sudeste.html">Região Sudeste</a></li>
+                                <li><a class="dropdown-item" href="sul.html">Região Sul</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="diario.html">Diário Cultural</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="galeria.html">Galeria & Mídia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="estatisticas.html">Estatísticas (Pura)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="sobre.html">Sobre (Pura)</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown">
+                                Fontes Externas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item external-link-hover" href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> W3C Standards</a></li>
+                                <li><a class="dropdown-item external-link-hover" href="http://portal.iphan.gov.br/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IPHAN Patrimônio</a></li>
+                                <li><a class="dropdown-item external-link-hover" href="https://www.gov.br/turismo/pt-br" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> Ministério do Turismo</a></li>
+                                <li><a class="dropdown-item external-link-hover" href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/territorio/brasil.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IBGE Educa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <span id="navUserBadge" class="badge bg-success d-none">Visitante</span>
+                        <span class="badge bg-secondary p-2">Explorações: <span class="contador-exploracoes-valor">0</span></span>
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggleBtn" type="button" title="Alternar Modo Claro/Escuro">
+                            <i class="bi bi-moon-fill" id="themeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        <section class="card p-3 mb-4 shadow-sm" id="saudacaoBanner">
+            <div id="welcomeLoggedOut" class="row align-items-center g-2">
+                <div class="col-md-8">
+                    <span class="selo-portal mb-1">Personalização do Visitante</span>
+                    <h5 class="mb-1 fw-bold">Como você gostaria de ser chamado(a)?</h5>
+                    <p class="text-secondary small mb-0">Digite seu nome para personalizar sua navegação e salvar suas notas no navegador (LocalStorage).</p>
+                </div>
+                <div class="col-md-4">
+                    <form id="formNomeUsuario" class="d-flex gap-2">
+                        <label for="inputNomeUsuario" class="visually-hidden">Seu nome</label>
+                        <input type="text" id="inputNomeUsuario" class="form-control form-control-sm" placeholder="Digite seu nome..." minlength="2" required>
+                        <button type="submit" class="btn btn-primary btn-sm text-nowrap">Salvar</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="welcomeLoggedIn" class="d-flex justify-content-between align-items-center d-none">
+                <h5 id="saudacaoTexto" class="mb-0 fw-bold">Bem-vindo(a)!</h5>
+                <button type="button" id="btnLimparStorage" class="btn btn-outline-danger btn-sm">Trocar de Nome</button>
+            </div>
+        </section>
+
+        <section class="hero-banner mb-5 text-center" style="border-radius: 1rem;">
+            <div style="max-width: 820px; margin: 0 auto;">
+                <h1 class="fw-bold mb-3">Culturas, Festas e Belezas do Brasil</h1>
+                <p class="lead mb-4" style="font-size: 1.15rem; opacity: 0.95;">
+                    Uma jornada completa através do folclore, da gastronomia, da música e dos patrimônios históricos das cinco regiões do nosso país.
+                </p>
+                <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                    <a href="galeria.html" class="btn btn-warning fw-bold px-4 py-2">
+                        <i class="bi bi-collection-play me-1"></i> Explorar Mídia & Vídeos
+                    </a>
+                    <a href="diario.html" class="btn btn-outline-light fw-bold px-4 py-2">
+                        <i class="bi bi-journal-text me-1"></i> Acessar Diário de Bordo
+                    </a>
+                </div>
+                <div class="mt-4 pt-3 border-top border-white-50 d-flex justify-content-center align-items-center gap-2">
+                    <span class="small">Seu contador interativo de explorações:</span>
+                    <span class="badge bg-light text-dark fw-bold px-3 py-1 fs-6 contador-exploracoes-valor">0</span>
+                    <button id="btnAdicionarClique" class="btn btn-sm btn-outline-light ms-1" type="button">+1 Exploração</button>
+                    <button id="btnZerarContador" class="btn btn-sm btn-outline-light ms-1" type="button">Zerar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title">Explore as 5 Grandes Regiões Brasileiras</h2>
+            <p class="text-secondary mb-4">Selecione uma região para conhecer suas principais manifestações culturais, culinária e belezas naturais:</p>
+
+            <div class="row g-4">
+                <article class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/parintins.jpg" class="card-img-top" alt="Festival de Parintins no Amazonas">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-success mb-2 align-self-start">7 Estados</span>
+                            <h3 class="card-title h5 fw-bold">Região Norte</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                O pulsar da Floresta Amazônica, o misticismo do Festival de Parintins, a grandiosidade do Círio de Nazaré e os sabores do tacacá e açaí puro.
+                            </p>
+                            <a href="norte.html" class="btn btn-primary btn-sm mt-3">
+                                Conhecer o Norte <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/frevo.jpg" class="card-img-top" alt="Dançarinos de frevo em Olinda">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-warning text-dark mb-2 align-self-start">9 Estados</span>
+                            <h3 class="card-title h5 fw-bold">Região Nordeste</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                O calor do frevo pernambucano, os tambores do maracatu, as cores do São João de Caruaru e Campina Grande, e a riqueza do cordel.
+                            </p>
+                            <a href="nordeste.html" class="btn btn-primary btn-sm mt-3">
+                                Conhecer o Nordeste <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/pantanal.jpg" class="card-img-top" alt="Fauna e flora do Pantanal matogrossense">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-info text-dark mb-2 align-self-start">3 Estados + DF</span>
+                            <h3 class="card-title h5 fw-bold">Região Centro-Oeste</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                O santuário ecológico do Pantanal, os acordes da Viola de Cocho, as históricas Cavalhadas de Pirenópolis e o delicioso arroz com pequi.
+                            </p>
+                            <a href="centro-oeste.html" class="btn btn-primary btn-sm mt-3">
+                                Conhecer o Centro-Oeste <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-6 col-md-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/carnaval.jpg" class="card-img-top" alt="Desfile de Carnaval no Rio de Janeiro">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-primary mb-2 align-self-start">4 Estados</span>
+                            <h3 class="card-title h5 fw-bold">Região Sudeste</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                O espetáculo global do Samba carioca, os sinos barrocos das cidades históricas de Minas Gerais, a efervescência urbana e a gastronomia caipira e caiçara.
+                            </p>
+                            <a href="sudeste.html" class="btn btn-primary btn-sm mt-3">
+                                Conhecer o Sudeste <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-lg-6 col-md-12">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/sul.jpg" class="card-img-top" alt="Tradições e paisagens da Região Sul">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge bg-danger mb-2 align-self-start">3 Estados</span>
+                            <h3 class="card-title h5 fw-bold">Região Sul</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                A força da cultura gaúcha, o chimarrão à beira do fogo, as festas típicas de imigração alemã e italiana, a serra e o tradicional barreado litorâneo.
+                            </p>
+                            <a href="sul.html" class="btn btn-primary btn-sm mt-3">
+                                Conhecer o Sul <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="card p-4 mb-5 shadow-sm" id="bannerDestaqueHome">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-8">
+                    <h3 class="fw-bold mb-2">Módulos Especiais Desenvolvidos</h3>
+                    <p class="text-secondary mb-0">
+                        Este portal atende a todos os critérios acadêmicos do edital de Front-End, incluindo persistência no <strong>LocalStorage</strong>, galeria com <strong>CSS Grid Layout</strong>, players nativos de <strong>áudio e vídeo</strong>, e duas páginas em <strong>HTML5/CSS3 puro</strong> sem frameworks.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="estatisticas.html" class="btn btn-outline-success me-2 mb-2 mb-sm-0">
+                        <i class="bi bi-table me-1"></i> Tabela 100% Pura
+                    </a>
+                    <a href="sobre.html" class="btn btn-outline-primary">
+                        <i class="bi bi-info-circle me-1"></i> Sobre o Projeto
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="row g-3 text-start mb-3">
+                <div class="col-md-4">
+                    <h5 class="text-white fw-bold"><span style="font-size: 1.2rem;">🇧🇷</span> CulturaBrasil</h5>
+                    <p class="small text-secondary mb-0">
+                        Portal acadêmico sobre a diversidade cultural e turismo nas cinco regiões do Brasil. Desenvolvido para a disciplina DFEW.08 - Projeto Front-End para Web.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-white fw-bold">Navegação Rápida</h6>
+                    <ul class="list-unstyled small mb-0">
+                        <li><a href="index.html">Início</a> &bull; <a href="diario.html">Diário Cultural</a></li>
+                        <li><a href="galeria.html">Galeria & Mídia</a> &bull; <a href="contato.html">Contato</a></li>
+                        <li><a href="estatisticas.html">Estatísticas (Puro)</a> &bull; <a href="sobre.html">Sobre (Puro)</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-white fw-bold">Institucional & Referências</h6>
+                    <p class="small text-secondary mb-1">Universidade Positivo &bull; Prof. Fabricio Olivo</p>
+                    <p class="small text-secondary mb-0">Arthur e Equipe &bull; Rodando em modo 100% Offline</p>
+                </div>
+            </div>
+            <div class="pt-3 border-top border-secondary text-secondary small">
+                &copy; 2026 CulturaBrasil. Todos os direitos reservados. Código sem comentários em conformidade com as regras do projeto.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

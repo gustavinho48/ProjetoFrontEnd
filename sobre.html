@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Projeto (Módulo Puro) | CulturaBrasil</title>
+    <link rel="stylesheet" href="css/puro.css">
+    <style>
+        .puro-diagrama-box {
+            background-color: var(--puro-surface);
+            border: 1px solid var(--puro-border);
+            border-radius: var(--puro-radius);
+            padding: 1.5rem;
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: var(--puro-text);
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .puro-tag-pill {
+            background-color: rgba(11, 110, 79, 0.1);
+            color: var(--puro-primary);
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-right: 0.35rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="puro-navbar">
+        <div class="puro-nav-container">
+            <a href="index.html" class="puro-brand">
+                <span style="font-size: 1.3rem;">🇧🇷</span> CulturaBrasil
+            </a>
+
+            <nav aria-label="Navegação Principal Pura">
+                <ul class="puro-nav-menu">
+                    <li class="puro-nav-item"><a href="index.html">Início</a></li>
+                    <li class="nav-item"><a href="norte.html">Norte</a></li>
+                    <li class="puro-nav-item"><a href="nordeste.html">Nordeste</a></li>
+                    <li class="puro-nav-item"><a href="centro-oeste.html">Centro-Oeste</a></li>
+                    <li class="puro-nav-item"><a href="sudeste.html">Sudeste</a></li>
+                    <li class="puro-nav-item"><a href="sul.html">Sul</a></li>
+                    <li class="puro-nav-item"><a href="diario.html">Diário</a></li>
+                    <li class="puro-nav-item"><a href="galeria.html">Galeria</a></li>
+                    <li class="puro-nav-item"><a href="estatisticas.html">Estatísticas</a></li>
+                    <li class="puro-nav-item"><a href="sobre.html" class="active">Sobre</a></li>
+                    <li class="puro-nav-item"><a href="contato.html">Contato</a></li>
+                    <li class="puro-nav-item"><a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer">W3C<span class="puro-external-badge">Ext</span></a></li>
+                </ul>
+            </nav>
+
+            <div class="puro-controls">
+                <button type="button" id="btnTemaPuro" class="puro-theme-btn" title="Alternar tema">
+                    Modo Escuro 🌙
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="puro-container">
+        <section class="puro-banner">
+            <span class="puro-badge-vanilla">Página 100% Pura &bull; Sem Frameworks ou Bibliotecas</span>
+            <h1>Memorial Acadêmico e Metodologia do Projeto</h1>
+            <p>
+                Documento de apresentação técnica desenvolvido para avaliação na disciplina de Desenvolvimento Front-End para Web na Universidade Positivo. Conheça as diretrizes, divisão de papéis e arquitetura construída.
+            </p>
+        </section>
+
+        <section class="puro-card">
+            <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--puro-primary);">
+                Identificação Institucional
+            </h2>
+            <div class="puro-grid" style="margin-bottom: 0;">
+                <div class="puro-grid-item">
+                    <strong>Instituição de Ensino:</strong><br>
+                    Universidade Positivo (UP) &bull; Curitiba/PR
+                </div>
+                <div class="puro-grid-item">
+                    <strong>Unidade Curricular:</strong><br>
+                    DFEW.08 – Projeto Front-End para Web
+                </div>
+                <div class="puro-grid-item">
+                    <strong>Professor Orientador:</strong><br>
+                    Prof. Fabricio Olivo (fabricio@up.edu.br)
+                </div>
+                <div class="puro-grid-item">
+                    <strong>Equipe Executora (2 Alunos):</strong><br>
+                    Arthur e Integrante da Equipe
+                </div>
+            </div>
+        </section>
+
+        <section class="puro-card">
+            <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--puro-primary);">
+                Tema Escolhido e Objetivos Centrais
+            </h2>
+            <p style="margin-bottom: 1rem;">
+                O tema escolhido é <strong>"Cultura, Tradições e Turismo nas Cinco Regiões do Brasil"</strong>. O objetivo central é fornecer aos internautas uma plataforma imersiva, acessível e responsiva que valorize o patrimônio material e imaterial brasileiro.
+            </p>
+            <p style="margin-bottom: 0;">
+                O site foi projetado para operar com excelência em modo <strong>100% offline</strong> a partir do arquivo <code>index.html</code>, sem depender de conexão externa para carregar folhas de estilo, fontes, scripts ou reprodutores de mídia.
+            </p>
+        </section>
+
+        <section class="puro-card">
+            <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--puro-primary);">
+                Arquitetura de Pastas e Arquivos (Estrutura Raiz)
+            </h2>
+            <p style="color: var(--puro-text-muted); font-size: 0.95rem; margin-bottom: 0.5rem;">
+                Em estrito cumprimento ao item 1 e às regras de entrega dos slides 3 e 6, todos os 11 arquivos HTML residem na pasta raiz, organizados em subpastas semânticas:
+            </p>
+
+            <div class="puro-diagrama-box">
+raiz-do-projeto/
+├── audio/                      # Arquivo de audio nativo (ritmos-brasil.wav)
+│   └── ritmos-brasil.wav
+├── css/                        # Estilos locais offline e fontes
+│   ├── bootstrap.min.css       # Bootstrap v5.3 local (offline)
+│   ├── bootstrap-icons.min.css # Icones locais (offline)
+│   ├── fonts/                  # Fontes woff2 dos icones locais
+│   ├── puro.css                # CSS Vanilla puro sem bibliotecas
+│   └── styles.css              # Estilo principal customizado
+├── doc/                        # Documentacao academica e defesa do codigo
+│   ├── documentacao_e_defesa.html
+│   └── documentacao_e_defesa.pdf
+├── images/ (ou img/)           # Fotografias regionais em alta resolucao
+│   ├── carnaval.jpg
+│   ├── frevo.jpg
+│   ├── pantanal.jpg
+│   ├── parintins.jpg
+│   ├── praia-brasil.jpg
+│   └── sul.jpg
+├── js/                         # Scripts locais offline
+│   ├── bootstrap.bundle.min.js # Bundle JS do Bootstrap offline
+│   ├── puro.js                 # JS Vanilla puro para calculos e filtros
+│   └── script.js               # Logica de CRUD, LocalStorage e tema
+├── video/                      # Arquivo de video nativo (brasil-cultural.webm)
+│   └── brasil-cultural.webm
+├── index.html                  # 1. Pagina Inicial / Portal
+├── norte.html                  # 2. Regiao Norte
+├── nordeste.html               # 3. Regiao Nordeste
+├── centro-oeste.html           # 4. Regiao Centro-Oeste
+├── sudeste.html                # 5. Regiao Sudeste
+├── sul.html                    # 6. Regiao Sul
+├── diario.html                 # 7. Diario de Bordo (LocalStorage)
+├── galeria.html                # 8. Galeria Multimidia (CSS Grid & Midia)
+├── contato.html                # 9. Contato (Validacoes Nativas e Estados)
+├── estatisticas.html           # 10. Modulo Puro 1 (Tabela 6x5 e Calculos)
+└── sobre.html                  # 11. Modulo Puro 2 (Memorial e Arquitetura)
+            </div>
+        </section>
+
+        <section class="puro-card">
+            <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--puro-primary);">
+                Divisão de Tarefas na Equipe de 2 Alunos
+            </h2>
+            <div class="puro-grid">
+                <article class="puro-grid-item">
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--puro-primary);">Integrante 1 (Arthur)</h3>
+                    <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--puro-text-muted);">
+                        <li>Arquitetura semântica das páginas HTML5 e organização de pastas.</li>
+                        <li>Configuração do Bootstrap 5 local e responsividade mobile-first.</li>
+                        <li>Desenvolvimento da lógica do LocalStorage (Diário de Bordo, Nome do usuário e Contador).</li>
+                        <li>Implementação dos players nativos de áudio e vídeo na galeria.</li>
+                    </ul>
+                </article>
+
+                <article class="puro-grid-item">
+                    <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--puro-primary);">Integrante 2 (Parceiro de Equipe)</h3>
+                    <ul style="padding-left: 1.25rem; font-size: 0.9rem; color: var(--puro-text-muted);">
+                        <li>Desenvolvimento do módulo Vanilla puro (<code>estatisticas.html</code> e <code>sobre.html</code>) em CSS3/JS puro.</li>
+                        <li>Formulário com validações nativas e estilização dos estados <code>:focus</code>, <code>:hover</code> e <code>:invalid</code>.</li>
+                        <li>Curadoria do acervo cultural, culinária e levantamento de dados no IBGE e IPHAN.</li>
+                        <li>Redação da documentação acadêmica e preparação dos slides de defesa.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="puro-card">
+            <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; color: var(--puro-primary);">
+                Sites de Inspiração e Referências Técnicas
+            </h2>
+            <ul style="padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.8;">
+                <li><a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer" style="color: var(--puro-primary); font-weight: 600;">W3C - World Wide Web Consortium</a>: Padrões internacionais de HTML5 semântico e CSS3.</li>
+                <li><a href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noopener noreferrer" style="color: var(--puro-primary); font-weight: 600;">MDN Web Docs (Mozilla)</a>: Referência para API de LocalStorage, seletores DOM e áudio/vídeo nativos.</li>
+                <li><a href="http://portal.iphan.gov.br/" target="_blank" rel="noopener noreferrer" style="color: var(--puro-primary); font-weight: 600;">IPHAN</a>: Acervo do patrimônio imaterial do Brasil (Boi de Parintins, Viola de Cocho, Frevo, Carimbó).</li>
+                <li><a href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/territorio/brasil.html" target="_blank" rel="noopener noreferrer" style="color: var(--puro-primary); font-weight: 600;">IBGE Educa Jovens</a>: Estatísticas oficiais de população, biomas e áreas territoriais das regiões.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="puro-footer">
+        <div class="puro-footer-content">
+            <div>
+                <h4 style="color: #ffffff; margin-bottom: 0.5rem; font-weight: 700;">CulturaBrasil &bull; Memorial Acadêmico</h4>
+                <p style="font-size: 0.9rem;">Universidade Positivo &bull; Curitiba/PR &bull; 2026</p>
+            </div>
+            <div>
+                <ul style="list-style: none; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="estatisticas.html">Estatísticas</a></li>
+                    <li><a href="diario.html">Diário Cultural</a></li>
+                    <li><a href="doc/documentacao_e_defesa.pdf" target="_blank">Baixar PDF da Defesa</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/puro.js"></script>
+</body>
+</html>

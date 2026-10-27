@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria & Multimídia | CulturaBrasil</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .grid-galeria-cultural {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .galeria-item {
+            position: relative;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            background-color: var(--card-bg-light);
+            border: 1px solid var(--card-border-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .galeria-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .galeria-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .galeria-item:hover .galeria-img {
+            transform: scale(1.05);
+        }
+        .galeria-info {
+            padding: 1rem 1.25rem;
+        }
+        .player-card {
+            border-left: 4px solid var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <span style="font-size: 1.4rem;">🇧🇷</span> CulturaBrasil
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Regiões</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="norte.html">Região Norte</a></li>
+                                <li><a class="dropdown-item" href="nordeste.html">Região Nordeste</a></li>
+                                <li><a class="dropdown-item" href="centro-oeste.html">Região Centro-Oeste</a></li>
+                                <li><a class="dropdown-item" href="sudeste.html">Região Sudeste</a></li>
+                                <li><a class="dropdown-item" href="sul.html">Região Sul</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="diario.html">Diário Cultural</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="galeria.html">Galeria & Mídia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="estatisticas.html">Estatísticas (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown">Fontes Externas</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> W3C Standards</a></li>
+                                <li><a class="dropdown-item" href="http://portal.iphan.gov.br/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IPHAN</a></li>
+                                <li><a class="dropdown-item" href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/territorio/brasil.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IBGE Educa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <span id="navUserBadge" class="badge bg-success d-none">Visitante</span>
+                        <span class="badge bg-secondary p-2">Explorações: <span class="contador-exploracoes-valor">0</span></span>
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggleBtn" type="button" title="Alternar Modo Claro/Escuro">
+                            <i class="bi bi-moon-fill" id="themeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Galeria & Multimídia</li>
+            </ol>
+        </nav>
+
+        <section class="p-4 mb-4 rounded-3 shadow-sm" style="background: linear-gradient(135deg, rgba(29, 120, 116, 0.15) 0%, rgba(11, 110, 79, 0.08) 100%); border: 1px solid rgba(29, 120, 116, 0.25);">
+            <span class="badge bg-primary mb-2">CSS Grid Layout &bull; Player de Áudio e Vídeo Nativos</span>
+            <h1 class="fw-bold mb-2">Galeria Multimídia de Manifestações Culturais</h1>
+            <p class="text-secondary mb-0">
+                Aprecie imagens das cinco regiões dispostas em grade responsiva (CSS Grid Layout) e experimente os players de vídeo e áudio incorporados com controles nativos do HTML5, funcionando offline sem serviços de terceiros.
+            </p>
+        </section>
+
+        <section class="row g-4 mb-5">
+            <div class="col-lg-6">
+                <div class="card p-3 shadow-sm h-100 player-card">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <i class="bi bi-camera-reels text-primary fs-4"></i>
+                        <h2 class="h5 fw-bold mb-0">Player de Vídeo Nativo (HTML5)</h2>
+                    </div>
+                    <p class="text-secondary small mb-3">Vídeo local incorporado com controles de reprodução nativos, volume e tela cheia.</p>
+
+                    <div class="media-player-wrapper mb-2">
+                        <video id="videoPlayerNativo" controls preload="metadata" poster="images/praia-brasil.jpg">
+                            <source src="video/brasil-cultural.webm" type="video/webm">
+                            Seu navegador não suporta a reprodução de vídeo nativo HTML5.
+                        </video>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <span id="statusVideoNativo" class="text-secondary small">Pronto para reprodução offline</span>
+                        <span class="badge bg-secondary">Formato: WebM/MP4</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card p-3 shadow-sm h-100 player-card">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <i class="bi bi-music-note-beamed text-success fs-4"></i>
+                        <h2 class="h5 fw-bold mb-0">Reprodutor de Áudio Nativo (HTML5)</h2>
+                    </div>
+                    <p class="text-secondary small mb-3">Faixa harmônica evocando ritmos tradicionais brasileiros com controles nativos.</p>
+
+                    <div class="media-player-wrapper mb-2">
+                        <audio id="audioPlayerNativo" controls preload="metadata">
+                            <source src="audio/ritmos-brasil.wav" type="audio/wav">
+                            Seu navegador não suporta a tag de áudio HTML5.
+                        </audio>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <span id="statusAudioNativo" class="text-secondary small">Aguardando início do áudio</span>
+                        <span class="badge bg-secondary">Formato: WAV Nativo</span>
+                    </div>
+
+                    <div class="mt-4 p-3 rounded bg-body-tertiary">
+                        <h6 class="fw-bold mb-1"><i class="bi bi-info-circle me-1"></i> Sobre a Trilha Regional</h6>
+                        <small class="text-secondary">Os instrumentos nativos do Brasil incluem o berimbau, a viola de cocho, o bumbo de maracatu e a sanfona de oito baixos.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title">Galeria de Imagens com CSS Grid Layout</h2>
+            <p class="text-secondary mb-4">Grade organizada dinamicamente através de <code>display: grid</code> e <code>grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))</code>.</p>
+
+            <div class="grid-galeria-cultural">
+                <article class="galeria-item">
+                    <img src="images/parintins.jpg" alt="Festival de Parintins no Amazonas" class="galeria-img">
+                    <div class="galeria-info">
+                        <span class="badge bg-success mb-1">Norte</span>
+                        <h3 class="h6 fw-bold mb-1">Boi Garantido e Caprichoso</h3>
+                        <p class="text-secondary small mb-2">A grandiosidade do espetáculo no bumbódromo no coração da Amazônia.</p>
+                        <a href="norte.html" class="btn btn-outline-success btn-sm">Ver Detalhes</a>
+                    </div>
+                </article>
+
+                <article class="galeria-item">
+                    <img src="images/frevo.jpg" alt="Dançarinos de frevo em Pernambuco" class="galeria-img">
+                    <div class="galeria-info">
+                        <span class="badge bg-warning text-dark mb-1">Nordeste</span>
+                        <h3 class="h6 fw-bold mb-1">Cores e Passos de Frevo</h3>
+                        <p class="text-secondary small mb-2">As sombrinhas coloridas e o ritmo vibrante das orquestras de metais.</p>
+                        <a href="nordeste.html" class="btn btn-outline-warning text-dark btn-sm">Ver Detalhes</a>
+                    </div>
+                </article>
+
+                <article class="galeria-item">
+                    <img src="images/pantanal.jpg" alt="Vida selvagem e águas do Pantanal" class="galeria-img">
+                    <div class="galeria-info">
+                        <span class="badge bg-info text-dark mb-1">Centro-Oeste</span>
+                        <h3 class="h6 fw-bold mb-1">Santuário Ecológico Pantaneiro</h3>
+                        <p class="text-secondary small mb-2">Planícies alagadas onde fauna e tradição sertaneja coexistem em harmonia.</p>
+                        <a href="centro-oeste.html" class="btn btn-outline-info text-dark btn-sm">Ver Detalhes</a>
+                    </div>
+                </article>
+
+                <article class="galeria-item">
+                    <img src="images/carnaval.jpg" alt="Desfile da Marquês de Sapucaí" class="galeria-img">
+                    <div class="galeria-info">
+                        <span class="badge bg-primary mb-1">Sudeste</span>
+                        <h3 class="h6 fw-bold mb-1">Samba Enredo Carioca</h3>
+                        <p class="text-secondary small mb-2">A harmonia das baterias, alas coreografadas e alegorias monumentais.</p>
+                        <a href="sudeste.html" class="btn btn-outline-primary btn-sm">Ver Detalhes</a>
+                    </div>
+                </article>
+
+                <article class="galeria-item">
+                    <img src="images/sul.jpg" alt="Tradições e campo no Sul" class="galeria-img">
+                    <div class="galeria-info">
+                        <span class="badge bg-danger mb-1">Sul</span>
+                        <h3 class="h6 fw-bold mb-1">Costumes do Sul e Chimarrão</h3>
+                        <p class="text-secondary small mb-2">O fogo de chão, a pilcha e a preservação dos laços históricos comunitários.</p>
+                        <a href="sul.html" class="btn btn-outline-danger btn-sm">Ver Detalhes</a>
+                    </div>
+                </article>
+
+                <article class="galeria-item">
+                    <img src="images/praia-brasil.jpg" alt="Litoral e costa brasileira" class="galeria-img">
+                    <div class="galeria-info">
+                        <span class="badge bg-secondary mb-1">Nacional</span>
+                        <h3 class="h6 fw-bold mb-1">Litoral e Belezas Naturais</h3>
+                        <p class="text-secondary small mb-2">Mais de 7.000 km de costa tropical com praias, dunas e recifes de coral.</p>
+                        <a href="estatisticas.html" class="btn btn-outline-secondary btn-sm">Ver Estatísticas</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside class="card p-4 shadow-sm bg-body-tertiary">
+            <div class="row align-items-center">
+                <div class="col-md-9">
+                    <h5 class="fw-bold mb-1">Deseja enviar sugestões ou novas mídias?</h5>
+                    <p class="text-secondary small mb-0">Acesse nossa página de contato com formulário estilizado e validações nativas em conformidade com o edital.</p>
+                </div>
+                <div class="col-md-3 text-md-end mt-2 mt-md-0">
+                    <a href="contato.html" class="btn btn-primary">Fale Conosco</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span class="small">&copy; 2026 CulturaBrasil &bull; Galeria Multimídia (CSS Grid & Mídia) &bull; Universidade Positivo</span>
+                <span class="small"><a href="index.html">Início</a> | <a href="diario.html">Diário</a> | <a href="sobre.html">Sobre</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

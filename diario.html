@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário Cultural | CulturaBrasil</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .tabela-acoes-btn {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.8rem;
+        }
+        #bannerDiarioTopo {
+            border-left: 5px solid var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <span style="font-size: 1.4rem;">🇧🇷</span> CulturaBrasil
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Regiões</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="norte.html">Região Norte</a></li>
+                                <li><a class="dropdown-item" href="nordeste.html">Região Nordeste</a></li>
+                                <li><a class="dropdown-item" href="centro-oeste.html">Região Centro-Oeste</a></li>
+                                <li><a class="dropdown-item" href="sudeste.html">Região Sudeste</a></li>
+                                <li><a class="dropdown-item" href="sul.html">Região Sul</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="diario.html">Diário Cultural</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria & Mídia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="estatisticas.html">Estatísticas (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown">Fontes Externas</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> W3C Standards</a></li>
+                                <li><a class="dropdown-item" href="http://portal.iphan.gov.br/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IPHAN</a></li>
+                                <li><a class="dropdown-item" href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/territorio/brasil.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IBGE Educa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <span id="navUserBadge" class="badge bg-success d-none">Visitante</span>
+                        <span class="badge bg-secondary p-2">Explorações: <span class="contador-exploracoes-valor">0</span></span>
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggleBtn" type="button" title="Alternar Modo Claro/Escuro">
+                            <i class="bi bi-moon-fill" id="themeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Diário Cultural</li>
+            </ol>
+        </nav>
+
+        <section class="card p-3 mb-4 shadow-sm" id="saudacaoBanner">
+            <div id="welcomeLoggedOut" class="row align-items-center g-2">
+                <div class="col-md-8">
+                    <h5 class="mb-1 fw-bold">Identificação do Viajante</h5>
+                    <p class="text-secondary small mb-0">Informe seu nome para assinar seu Diário de Bordo Cultural.</p>
+                </div>
+                <div class="col-md-4">
+                    <form id="formNomeUsuario" class="d-flex gap-2">
+                        <label for="inputNomeUsuario" class="visually-hidden">Seu nome</label>
+                        <input type="text" id="inputNomeUsuario" class="form-control form-control-sm" placeholder="Seu nome" minlength="2" required>
+                        <button type="submit" class="btn btn-primary btn-sm text-nowrap">Salvar</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="welcomeLoggedIn" class="d-flex justify-content-between align-items-center d-none">
+                <h5 id="saudacaoTexto" class="mb-0 fw-bold">Bem-vindo(a)!</h5>
+                <button type="button" id="btnLimparStorage" class="btn btn-outline-danger btn-sm">Trocar de Nome</button>
+            </div>
+        </section>
+
+        <section class="card p-4 mb-4 shadow-sm" id="bannerDiarioTopo">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div>
+                    <span class="badge bg-primary mb-1">Persistência com LocalStorage</span>
+                    <h1 class="h3 fw-bold mb-1">Meu Diário de Bordo Cultural</h1>
+                    <p class="text-secondary small mb-0">Cadastre notas, experiências desejadas e roteiros pelas cinco regiões do Brasil. Seus dados permanecem salvos mesmo se você fechar ou atualizar o navegador.</p>
+                </div>
+                <div>
+                    <span class="badge bg-secondary p-2 fs-6" id="countAnotacoes">0 registro(s)</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4">
+                <section class="card p-3 shadow-sm h-100">
+                    <h2 class="h5 fw-bold mb-3 text-primary">
+                        <i class="bi bi-pencil-square me-1"></i> Nova Anotação
+                    </h2>
+
+                    <form id="formAnotacao">
+                        <input type="hidden" id="editAnotacaoId" value="">
+
+                        <div class="mb-3">
+                            <label for="tituloAnotacao" class="form-label small fw-bold">Título da Manifestação / Local</label>
+                            <input type="text" class="form-control" id="tituloAnotacao" placeholder="Ex: Festival de Parintins" minlength="3" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="regiaoAnotacao" class="form-label small fw-bold">Região do Brasil</label>
+                            <select class="form-select" id="regiaoAnotacao" required>
+                                <option value="Norte">Região Norte</option>
+                                <option value="Nordeste">Região Nordeste</option>
+                                <option value="Centro-Oeste">Região Centro-Oeste</option>
+                                <option value="Sudeste">Região Sudeste</option>
+                                <option value="Sul">Região Sul</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dataAnotacao" class="form-label small fw-bold">Data Planejada</label>
+                            <input type="date" class="form-control" id="dataAnotacao">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="textoAnotacao" class="form-label small fw-bold">Detalhes / Observações</label>
+                            <textarea class="form-control" id="textoAnotacao" rows="4" placeholder="Escreva sobre suas impressões, pratos que deseja experimentar ou curiosidades..." minlength="5" required></textarea>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary btn-sm flex-grow-1">
+                                <i class="bi bi-plus-circle me-1"></i> Salvar no Diário
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm d-none" id="btnCancelarEdicao">
+                                Cancelar
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="col-lg-8">
+                <section class="card p-3 shadow-sm h-100">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                        <h2 class="h5 fw-bold mb-0">
+                            <i class="bi bi-card-checklist me-1"></i> Roteiros e Memórias Gravadas
+                        </h2>
+                        <div class="d-flex align-items-center gap-2">
+                            <label for="filtroRegiaoNotas" class="small fw-bold text-nowrap">Filtrar por:</label>
+                            <select id="filtroRegiaoNotas" class="form-select form-select-sm" style="width: auto;">
+                                <option value="Todas">Todas as Regiões</option>
+                                <option value="Norte">Norte</option>
+                                <option value="Nordeste">Nordeste</option>
+                                <option value="Centro-Oeste">Centro-Oeste</option>
+                                <option value="Sudeste">Sudeste</option>
+                                <option value="Sul">Sul</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">Título</th>
+                                    <th scope="col">Região</th>
+                                    <th scope="col">Data</th>
+                                    <th scope="col">Observações</th>
+                                    <th scope="col" class="text-end">Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="corpoTabelaAnotacoes">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="emptyStateAnotacoes" class="text-center py-5 text-secondary d-none">
+                        <i class="bi bi-journal-x fs-1 d-block mb-2"></i>
+                        <p class="mb-0">Nenhuma anotação encontrada para o filtro selecionado.</p>
+                        <small>Utilize o formulário ao lado para cadastrar seu primeiro registro.</small>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <aside class="card p-3 shadow-sm bg-body-tertiary">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <div>
+                    <strong class="d-block">Quer explorar mais manifestações?</strong>
+                    <small class="text-secondary">Assista aos vídeos e ouça faixas musicais na galeria multimídia.</small>
+                </div>
+                <a href="galeria.html" class="btn btn-outline-primary btn-sm">
+                    Ir para Galeria Multimídia <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span class="small">&copy; 2026 CulturaBrasil &bull; Diário de Bordo com LocalStorage &bull; Universidade Positivo</span>
+                <span class="small"><a href="index.html">Início</a> | <a href="galeria.html">Galeria</a> | <a href="contato.html">Contato</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

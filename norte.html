@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Região Norte | CulturaBrasil</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .norte-accent {
+            border-left: 4px solid #198754;
+            padding-left: 0.75rem;
+        }
+        .prato-card {
+            background-color: var(--card-bg-light);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .prato-card:hover {
+            transform: translateY(-2px);
+            border-color: #198754 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <span style="font-size: 1.4rem;">🇧🇷</span> CulturaBrasil
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Regiões</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="norte.html">Região Norte</a></li>
+                                <li><a class="dropdown-item" href="nordeste.html">Região Nordeste</a></li>
+                                <li><a class="dropdown-item" href="centro-oeste.html">Região Centro-Oeste</a></li>
+                                <li><a class="dropdown-item" href="sudeste.html">Região Sudeste</a></li>
+                                <li><a class="dropdown-item" href="sul.html">Região Sul</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="diario.html">Diário Cultural</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria & Mídia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="estatisticas.html">Estatísticas (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown">Fontes Externas</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> W3C Standards</a></li>
+                                <li><a class="dropdown-item" href="http://portal.iphan.gov.br/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IPHAN</a></li>
+                                <li><a class="dropdown-item" href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/territorio/brasil.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IBGE Educa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <span id="navUserBadge" class="badge bg-success d-none">Visitante</span>
+                        <span class="badge bg-secondary p-2">Explorações: <span class="contador-exploracoes-valor">0</span></span>
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggleBtn" type="button" title="Alternar Modo Claro/Escuro">
+                            <i class="bi bi-moon-fill" id="themeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                <li class="breadcrumb-item"><a href="#">Regiões</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Região Norte</li>
+            </ol>
+        </nav>
+
+        <section class="p-4 mb-4 rounded-3 shadow-sm" style="background: linear-gradient(135deg, rgba(25, 135, 84, 0.12) 0%, rgba(13, 110, 253, 0.05) 100%); border: 1px solid rgba(25, 135, 84, 0.2);">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <span class="badge bg-success mb-2">Acre &bull; Amapá &bull; Amazonas &bull; Pará &bull; Rondônia &bull; Roraima &bull; Tocantins</span>
+                    <h1 class="fw-bold mb-2">Região Norte: O Coração Verde do Brasil</h1>
+                    <p class="text-secondary mb-0">
+                        A maior região em extensão territorial é berço de uma biodiversidade incomparável e abriga povos originários, comunidades ribeirinhas e celebrações monumentais que mesclam misticismo indígena e fé popular.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="diario.html" class="btn btn-success">
+                        <i class="bi bi-journal-plus me-1"></i> Adicionar Nota no Diário
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title norte-accent">Grandes Manifestações e Festas Populares</h2>
+            <div class="row g-4">
+                <article class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/parintins.jpg" class="card-img-top" alt="Festival Folclórico de Parintins">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-success">Festival de Parintins</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                O histórico embate artístico entre os bois Garantido (vermelho da paixão) e Caprichoso (azul da estrela), que atrai dezenas de milhares de espectadores na Ilha Tupinambarana, no Amazonas.
+                            </p>
+                            <a href="diario.html" class="btn btn-outline-success btn-sm mt-2">
+                                <i class="bi bi-bookmark-plus me-1"></i> Salvar Roteiro
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="p-3 bg-body-tertiary border-bottom text-center">
+                            <i class="bi bi-flower1 text-success" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-success">Círio de Nazaré</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                Considerado o "Natal dos Paraenses", é uma das maiores procissões católicas do planeta, reunindo mais de dois milhões de devotos nas ruas de Belém do Pará todo mês de outubro.
+                            </p>
+                            <a href="diario.html" class="btn btn-outline-success btn-sm mt-2">
+                                <i class="bi bi-bookmark-plus me-1"></i> Salvar Roteiro
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="p-3 bg-body-tertiary border-bottom text-center">
+                            <i class="bi bi-music-note-beamed text-success" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-success">O Ritmo do Carimbó</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                Patrimônio Cultural Imaterial do Brasil, o carimbó contagia pelo toque vigoroso dos tambores curimbó, saias rodadas e passos que remetem ao trabalho dos pescadores e agricultores paraenses.
+                            </p>
+                            <a href="diario.html" class="btn btn-outline-success btn-sm mt-2">
+                                <i class="bi bi-bookmark-plus me-1"></i> Salvar Roteiro
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="card p-4 shadow-sm mb-5">
+            <h2 class="h5 fw-bold mb-3 norte-accent">Culinária Amazônica: Sabores da Floresta e dos Rios</h2>
+            <div class="row g-3 text-center">
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-cup-hot text-success fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Tacacá</strong>
+                        <small class="text-secondary">Caldo quente de tucupi, goma de mandioca, jambu e camarão seco servido na cuia tradicional.</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-egg-fried text-success fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Pato no Tucupi</strong>
+                        <small class="text-secondary">Pato assado cozido lentamente no caldo amarelo extraído da raiz da mandioca-brava.</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-basket text-success fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Açaí com Peixe Frito</strong>
+                        <small class="text-secondary">O açaí puro batido na hora, consumido como refeição salgada acompanhado de farinha d'água.</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-water text-success fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Pirarucu de Casaca</strong>
+                        <small class="text-secondary">Prato nobre feito com o gigante peixe de escamas dos rios amazônicos desfiado e gratinado.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="d-flex justify-content-between align-items-center flex-wrap gap-2 pt-3 border-top">
+            <a href="index.html" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Retornar ao Início
+            </a>
+            <a href="nordeste.html" class="btn btn-primary">
+                Próxima: Região Nordeste <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </aside>
+    </main>
+
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span class="small">&copy; 2026 CulturaBrasil &bull; Região Norte &bull; Universidade Positivo</span>
+                <span class="small"><a href="galeria.html">Galeria</a> | <a href="diario.html">Diário</a> | <a href="sobre.html">Sobre</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

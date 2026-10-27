@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato & Feedback | CulturaBrasil</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .form-status-indicator {
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+        .form-control:valid {
+            border-color: #198754;
+        }
+        .form-control:invalid:not(:placeholder-shown) {
+            border-color: #dc3545;
+            background-color: rgba(220, 53, 69, 0.02);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <span style="font-size: 1.4rem;">🇧🇷</span> CulturaBrasil
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Regiões</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="norte.html">Região Norte</a></li>
+                                <li><a class="dropdown-item" href="nordeste.html">Região Nordeste</a></li>
+                                <li><a class="dropdown-item" href="centro-oeste.html">Região Centro-Oeste</a></li>
+                                <li><a class="dropdown-item" href="sudeste.html">Região Sudeste</a></li>
+                                <li><a class="dropdown-item" href="sul.html">Região Sul</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="diario.html">Diário Cultural</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria & Mídia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="estatisticas.html">Estatísticas (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown">Fontes Externas</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> W3C Standards</a></li>
+                                <li><a class="dropdown-item" href="http://portal.iphan.gov.br/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IPHAN</a></li>
+                                <li><a class="dropdown-item" href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/territorio/brasil.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IBGE Educa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <span id="navUserBadge" class="badge bg-success d-none">Visitante</span>
+                        <span class="badge bg-secondary p-2">Explorações: <span class="contador-exploracoes-valor">0</span></span>
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggleBtn" type="button" title="Alternar Modo Claro/Escuro">
+                            <i class="bi bi-moon-fill" id="themeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Fale Conosco & Feedback</li>
+            </ol>
+        </nav>
+
+        <section class="p-4 mb-4 rounded-3 shadow-sm" style="background: linear-gradient(135deg, rgba(11, 110, 79, 0.12) 0%, rgba(227, 160, 24, 0.08) 100%); border: 1px solid rgba(11, 110, 79, 0.2);">
+            <span class="badge bg-primary mb-2">Validações Nativas &bull; Estados :focus, :hover, :invalid</span>
+            <h1 class="fw-bold mb-2">Canal de Contato e Colaboração Cultural</h1>
+            <p class="text-secondary mb-0">
+                Envie suas impressões, sugestões de novos pontos turísticos ou dúvidas acadêmicas. O formulário abaixo conta com validações nativas em HTML5 e armazena os envios no <strong>LocalStorage</strong>.
+            </p>
+        </section>
+
+        <div id="alertaSucessoContato" class="alert alert-success d-none shadow-sm" role="alert">
+            <h5 class="alert-heading fw-bold"><i class="bi bi-check-circle-fill me-2"></i> Mensagem Recebida com Sucesso!</h5>
+            <p class="mb-0">Seu feedback foi validado e registrado com segurança no LocalStorage do seu navegador.</p>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-7">
+                <section class="card p-4 shadow-sm h-100">
+                    <h2 class="h5 fw-bold mb-3 text-primary">
+                        <i class="bi bi-envelope-paper me-2"></i> Formulário de Mensagem
+                    </h2>
+
+                    <form id="formContatoPrincipal" novalidate>
+                        <div class="mb-3">
+                            <label for="contatoNome" class="form-label fw-bold small">
+                                Nome Completo <span class="text-danger">*</span>
+                            </label>
+                            <input type="text" class="form-control" id="contatoNome" name="nome" placeholder="Digite seu nome completo..." minlength="3" pattern="^[A-Za-zÀ-ÿ\s]{3,}$" required>
+                            <div class="form-status-indicator text-secondary">Mínimo de 3 caracteres (apenas letras e espaços).</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="contatoEmail" class="form-label fw-bold small">
+                                E-mail Institucional ou Pessoal <span class="text-danger">*</span>
+                            </label>
+                            <input type="email" class="form-control" id="contatoEmail" name="email" placeholder="exemplo@dominio.com" required>
+                            <div class="form-status-indicator text-secondary">Insira um endereço de e-mail válido com formato nome@dominio.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="contatoAssunto" class="form-label fw-bold small">
+                                Região de Interesse ou Assunto <span class="text-danger">*</span>
+                            </label>
+                            <select class="form-select" id="contatoAssunto" name="assunto" required>
+                                <option value="" selected disabled>Selecione uma opção...</option>
+                                <option value="Região Norte">Sugestão sobre Região Norte</option>
+                                <option value="Região Nordeste">Sugestão sobre Região Nordeste</option>
+                                <option value="Região Centro-Oeste">Sugestão sobre Região Centro-Oeste</option>
+                                <option value="Região Sudeste">Sugestão sobre Região Sudeste</option>
+                                <option value="Região Sul">Sugestão sobre Região Sul</option>
+                                <option value="Projeto Geral">Dúvidas sobre o Projeto Front-End</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="contatoMensagem" class="form-label fw-bold small">
+                                Mensagem / Contribuição <span class="text-danger">*</span>
+                            </label>
+                            <textarea class="form-control" id="contatoMensagem" name="mensagem" rows="5" placeholder="Compartilhe informações culturais, detalhes de festas ou fontes acadêmicas..." minlength="10" required></textarea>
+                            <div class="form-status-indicator text-secondary">Mínimo de 10 caracteres.</div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <button type="submit" class="btn btn-primary" id="btnEnviarContato">
+                                <i class="bi bi-send me-1"></i> Enviar Mensagem
+                            </button>
+                            <button type="reset" class="btn btn-outline-secondary">
+                                Limpar
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="col-lg-5">
+                <section class="card p-4 shadow-sm h-100 bg-body-tertiary">
+                    <h2 class="h5 fw-bold mb-3">
+                        <i class="bi bi-info-square me-2"></i> Especificações Atendidas
+                    </h2>
+
+                    <ul class="list-unstyled small mb-4">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Rótulos semânticos:</strong> Todas as tags <code>&lt;label&gt;</code> vinculadas com <code>for</code>.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Campos variados:</strong> <code>text</code>, <code>email</code>, <code>select</code>, <code>textarea</code> e <code>submit</code>.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Validações nativas:</strong> Atributos <code>required</code>, <code>minlength</code>, <code>pattern</code> e <code>placeholder</code>.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Estilos de pseudo-classes:</strong> Estilização personalizada de <code>:focus</code>, <code>:hover</code> e <code>:invalid</code> via CSS.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Persistência:</strong> Dados gravados na chave <code>cultura_brasil_mensagens</code> no <code>localStorage</code>.</li>
+                    </ul>
+
+                    <div class="p-3 bg-body rounded border">
+                        <h6 class="fw-bold mb-1"><i class="bi bi-geo-alt me-1 text-danger"></i> Universidade Positivo</h6>
+                        <p class="small text-secondary mb-1">Curitiba - PR &bull; Brasil</p>
+                        <p class="small text-secondary mb-0">Projeto da disciplina de Desenvolvimento Front-End para Web</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span class="small">&copy; 2026 CulturaBrasil &bull; Formulário com Validação &bull; Universidade Positivo</span>
+                <span class="small"><a href="index.html">Início</a> | <a href="diario.html">Diário</a> | <a href="sobre.html">Sobre</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

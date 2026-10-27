@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Região Nordeste | CulturaBrasil</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .nordeste-accent {
+            border-left: 4px solid #fd7e14;
+            padding-left: 0.75rem;
+        }
+        .prato-card {
+            background-color: var(--card-bg-light);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .prato-card:hover {
+            transform: translateY(-2px);
+            border-color: #fd7e14 !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    <span style="font-size: 1.4rem;">🇧🇷</span> CulturaBrasil
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Alternar navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Regiões</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="norte.html">Região Norte</a></li>
+                                <li><a class="dropdown-item active" href="nordeste.html">Região Nordeste</a></li>
+                                <li><a class="dropdown-item" href="centro-oeste.html">Região Centro-Oeste</a></li>
+                                <li><a class="dropdown-item" href="sudeste.html">Região Sudeste</a></li>
+                                <li><a class="dropdown-item" href="sul.html">Região Sul</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="diario.html">Diário Cultural</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria & Mídia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="estatisticas.html">Estatísticas (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre (Pura)</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown">Fontes Externas</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> W3C Standards</a></li>
+                                <li><a class="dropdown-item" href="http://portal.iphan.gov.br/" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IPHAN</a></li>
+                                <li><a class="dropdown-item" href="https://educa.ibge.gov.br/jovens/conheca-o-brasil/territorio/brasil.html" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i> IBGE Educa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <span id="navUserBadge" class="badge bg-success d-none">Visitante</span>
+                        <span class="badge bg-secondary p-2">Explorações: <span class="contador-exploracoes-valor">0</span></span>
+                        <button class="btn btn-outline-secondary btn-sm" id="themeToggleBtn" type="button" title="Alternar Modo Claro/Escuro">
+                            <i class="bi bi-moon-fill" id="themeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                <li class="breadcrumb-item"><a href="#">Regiões</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Região Nordeste</li>
+            </ol>
+        </nav>
+
+        <section class="p-4 mb-4 rounded-3 shadow-sm" style="background: linear-gradient(135deg, rgba(253, 126, 20, 0.12) 0%, rgba(255, 193, 7, 0.08) 100%); border: 1px solid rgba(253, 126, 20, 0.2);">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <span class="badge bg-warning text-dark mb-2">9 Estados: AL &bull; BA &bull; CE &bull; MA &bull; PB &bull; PE &bull; PI &bull; RN &bull; SE</span>
+                    <h1 class="fw-bold mb-2">Região Nordeste: Ritmo, Fé e Cores Vivas</h1>
+                    <p class="text-secondary mb-0">
+                        Ponto de encontro inaugural do Brasil colonial, o Nordeste vibra em suas manifestações sincréticas, do samba de roda baiano ao forró pé-de-serra, passando pela literatura de cordel e xilogravura.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <a href="diario.html" class="btn btn-warning fw-bold">
+                        <i class="bi bi-journal-plus me-1"></i> Adicionar Nota no Diário
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title nordeste-accent">Grandes Festividades e Manifestações</h2>
+            <div class="row g-4">
+                <article class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="images/frevo.jpg" class="card-img-top" alt="Sombrinhas e acrobacias do Frevo">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-warning-emphasis">O Frevo de Pernambuco</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                Reconhecido pela UNESCO como Patrimônio Imaterial da Humanidade, o frevo combina passos acrobáticos de capoeira com orquestras de metais aceleradas nas ladeiras de Olinda e Recife.
+                            </p>
+                            <a href="diario.html" class="btn btn-outline-warning text-dark btn-sm mt-2">
+                                <i class="bi bi-bookmark-plus me-1"></i> Salvar Roteiro
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="p-3 bg-body-tertiary border-bottom text-center">
+                            <i class="bi bi-stars text-warning" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-warning-emphasis">Festas Juninas e Forró</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                As maiores festas de São João do planeta ocorrem em Caruaru (PE) e Campina Grande (PB), celebrando a colheita do milho com quadrilhas gigantes, fogueiras e o toque do acordeon.
+                            </p>
+                            <a href="diario.html" class="btn btn-outline-warning text-dark btn-sm mt-2">
+                                <i class="bi bi-bookmark-plus me-1"></i> Salvar Roteiro
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="p-3 bg-body-tertiary border-bottom text-center">
+                            <i class="bi bi-book text-warning" style="font-size: 3rem;"></i>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title h5 fw-bold text-warning-emphasis">Cordel e Xilogravura</h3>
+                            <p class="card-text text-secondary small flex-grow-1">
+                                Folhetos pendurados em cordas que narram histórias de valentia, amor, humor e crônicas sociais, ilustrados com gravuras talhadas à mão na madeira.
+                            </p>
+                            <a href="diario.html" class="btn btn-outline-warning text-dark btn-sm mt-2">
+                                <i class="bi bi-bookmark-plus me-1"></i> Salvar Roteiro
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="card p-4 shadow-sm mb-5">
+            <h2 class="h5 fw-bold mb-3 nordeste-accent">Sabores e Gastronomia Marcante</h2>
+            <div class="row g-3 text-center">
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-fire text-warning fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Acarajé Baiano</strong>
+                        <small class="text-secondary">Bolinho de feijão-fradinho frito no azeite de dendê, recheado com vatapá, caruru e camarão.</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-grid-3x3 text-warning fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Baião de Dois</strong>
+                        <small class="text-secondary">Mistura saborosa de arroz, feijão-de-corda, queijo de coalho derretido e manteiga de garrafa.</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-sun text-warning fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Carne de Sol com Macaxeira</strong>
+                        <small class="text-secondary">Carne bovina curada ao ar livre e servida suculenta com mandioca cozida ou frita.</small>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="p-3 border rounded prato-card h-100">
+                        <i class="bi bi-circle text-warning fs-3 mb-2 d-block"></i>
+                        <strong class="d-block mb-1">Tapioca Tradicional</strong>
+                        <small class="text-secondary">Feita com fécula de mandioca hidratada na chapa e recheada com coco ralado fresco ou carne seca.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="d-flex justify-content-between align-items-center flex-wrap gap-2 pt-3 border-top">
+            <a href="norte.html" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Anterior: Região Norte
+            </a>
+            <a href="centro-oeste.html" class="btn btn-primary">
+                Próxima: Região Centro-Oeste <i class="bi bi-arrow-right ms-1"></i>
+            </a>
+        </aside>
+    </main>
+
+    <footer class="py-4 text-center">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                <span class="small">&copy; 2026 CulturaBrasil &bull; Região Nordeste &bull; Universidade Positivo</span>
+                <span class="small"><a href="galeria.html">Galeria</a> | <a href="diario.html">Diário</a> | <a href="sobre.html">Sobre</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

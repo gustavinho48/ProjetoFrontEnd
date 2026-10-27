@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação Acadêmica e Roteiro de Defesa de Código | CulturaBrasil</title>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body { font-family: "Segoe UI", Arial, sans-serif; color: #1a1a1a; line-height: 1.5; background-color: #f8fafc; margin: 0; padding: 0; }
+        .document-wrapper { max-width: 850px; margin: 20px auto; background: #ffffff; padding: 40px 50px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-radius: 8px; }
+        @media print {
+            body { background: #ffffff; }
+            .document-wrapper { box-shadow: none; padding: 0; margin: 0; max-width: 100%; }
+            .page-break { page-break-before: always; }
+            .no-print { display: none; }
+        }
+        .cover-page { min-height: 900px; display: flex; flex-direction: column; justify-content: space-between; text-align: center; padding: 40px 0; }
+        .cover-institution { font-size: 1.25rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0b6e4f; border-bottom: 2px solid #0b6e4f; padding-bottom: 15px; }
+        .cover-title-box { margin: 80px 0; }
+        .cover-title { font-size: 2.2rem; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.2; }
+        .cover-subtitle { font-size: 1.2rem; color: #4b5563; font-weight: 400; }
+        .cover-meta { text-align: right; max-width: 400px; margin-left: auto; margin-bottom: 50px; font-size: 0.95rem; color: #374151; line-height: 1.6; background: #f3f4f6; padding: 15px 20px; border-left: 4px solid #0b6e4f; border-radius: 4px; }
+        .cover-footer { font-size: 0.95rem; color: #4b5563; font-weight: 600; border-top: 1px solid #e5e7eb; padding-top: 15px; }
+        h1, h2, h3, h4 { color: #0b6e4f; font-weight: 700; }
+        h2 { font-size: 1.4rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 6px; margin-top: 35px; margin-bottom: 15px; }
+        h3 { font-size: 1.15rem; margin-top: 25px; margin-bottom: 10px; color: #1f2937; }
+        p { font-size: 0.95rem; text-align: justify; margin-bottom: 12px; }
+        ul, ol { font-size: 0.95rem; margin-bottom: 15px; padding-left: 25px; }
+        li { margin-bottom: 6px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 12px; text-align: left; }
+        th { background-color: #0b6e4f; color: #ffffff; font-weight: 600; }
+        tr:nth-child(even) td { background-color: #f9fafb; }
+        .color-palette-box { display: flex; gap: 15px; margin: 15px 0; flex-wrap: wrap; }
+        .color-swatch { flex: 1 1 120px; padding: 12px; border-radius: 6px; color: #ffffff; font-size: 0.8rem; font-weight: bold; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .code-block { background: #1e293b; color: #f8fafc; padding: 12px 16px; border-radius: 6px; font-family: Consolas, monospace; font-size: 0.85rem; overflow-x: auto; margin: 12px 0; line-height: 1.4; }
+        .alert-box { background: #ecfdf5; border-left: 4px solid #10b981; padding: 12px 18px; margin: 15px 0; border-radius: 0 6px 6px 0; font-size: 0.92rem; }
+        .defense-card { background: #ffffff; border: 1px solid #e2e8f0; border-left: 5px solid #0b6e4f; border-radius: 6px; padding: 15px 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .defense-question { font-size: 1.05rem; font-weight: 700; color: #0b6e4f; margin-bottom: 8px; }
+        .defense-answer { font-size: 0.95rem; color: #334155; line-height: 1.55; }
+        .print-btn-float { position: fixed; bottom: 25px; right: 25px; background: #0b6e4f; color: #ffffff; padding: 12px 20px; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.25); font-weight: bold; cursor: pointer; border: none; font-size: 1rem; z-index: 9999; }
+    </style>
+</head>
+<body>
+    <button class="print-btn-float no-print" onclick="window.print()">🖨️ Salvar como PDF / Imprimir</button>
+    <div class="document-wrapper">
+        <div class="cover-page">
+            <div class="cover-institution">Universidade Positivo &bull; Escola Politécnica<br>Desenvolvimento Front-End para Web (DFEW.08)</div>
+            <div class="cover-title-box">
+                <div class="cover-title">CULTURABRASIL</div>
+                <div class="cover-subtitle">Portal Interativo de Tradições, Turismo e Diversidade Cultural das 5 Regiões do Brasil</div>
+                <div style="margin-top: 15px; font-weight: 600; color: #0b6e4f; font-size: 1.05rem;">DOCUMENTAÇÃO DE PROJETO E GUIA DE DEFESA DO CÓDIGO</div>
+            </div>
+            <div class="cover-meta">
+                <strong>Equipe:</strong> Arthur e Integrante (2 Alunos)<br><br>
+                <strong>Professor Orientador:</strong> Prof. Fabricio Olivo<br><br>
+                <strong>Especificação:</strong> 11 páginas navegáveis, Bootstrap 5, Módulo Vanilla Puro, LocalStorage, Mídia Nativa e 100% Offline.
+            </div>
+            <div class="cover-footer">Curitiba - PR &bull; 2026</div>
+        </div>
+        <div class="page-break"></div>
+        <h2>Sumário Geral do Projeto</h2>
+        <ol style="line-height: 1.8; font-size: 0.95rem;">
+            <li><strong>1. Tema Escolhido e Objetivos Centrais</strong></li>
+            <li><strong>2. Metodologia e Ferramentas de Suporte Utilizadas</strong></li>
+            <li><strong>3. Linguagens e Tecnologias Empregadas</strong></li>
+            <li><strong>4. Sites de Referência e Inspiração</strong></li>
+            <li><strong>5. Divisão de Tarefas entre os Integrantes</strong></li>
+            <li><strong>6. Dificuldades Encontradas e Soluções Técnicas Adotadas</strong></li>
+            <li><strong>7. Estudo da Experiência do Usuário (UX)</strong></li>
+            <li><strong>8. Estudo sobre a Interface do Usuário (UI)</strong></li>
+            <li><strong>9. Estudo e Aplicação das 10 Heurísticas de Usabilidade de Nielsen</strong></li>
+            <li><strong>10. Escolha da Paleta de Cores e Acessibilidade (WCAG)</strong></li>
+            <li><strong>11. Escolha da Tipografia e Escala Visual</strong></li>
+            <li><strong>12. Mapa do Site (Sitemap) e Arquitetura de Informação</strong></li>
+            <li><strong>13. Catálogo das 11 Telas Desenvolvidas (Desktop vs Mobile)</strong></li>
+            <li><strong>14. Aplicações de JavaScript Puro e as 4 Estruturas Básicas de Programação</strong></li>
+            <li><strong>15. Guia Completo para Apresentação e Defesa Oral do Código</strong></li>
+            <li><strong>16. Banco de Perguntas e Respostas da Banca Examinadora</strong></li>
+            <li><strong>17. Referências Bibliográficas (Normas ABNT)</strong></li>
+        </ol>
+
+        <h2>1. Tema Escolhido e Objetivos Centrais</h2>
+        <p>O projeto <strong>CulturaBrasil</strong> aborda a <em>"Valorização das Tradições Populares, Patrimônios Históricos e Turismo Cultural nas Cinco Grandes Regiões do Brasil"</em> (Norte, Nordeste, Centro-Oeste, Sudeste e Sul).</p>
+        <p>O objetivo é fornecer uma plataforma acessível, responsiva e dinâmica onde o visitante explore as regiões, personalize sua visita com nome salvo no navegador, registre suas memórias no Diário Cultural com persistência em <strong>LocalStorage</strong> e consuma mídias com players nativos de vídeo e áudio.</p>
+        <div class="alert-box"><strong>Requisito Crucial Offline:</strong> O portal funciona <strong>100% offline a partir de index.html</strong>, com bibliotecas, ícones, fontes e mídias salvos localmente.</div>
+
+        <h2>2. Metodologia e Ferramentas de Suporte Utilizadas</h2>
+        <ul>
+            <li><strong>VS Code:</strong> Editor de código utilizado para estruturação e formatação limpa sem comentários no script (<a href="https://code.visualstudio.com/" target="_blank">VS Code</a>).</li>
+            <li><strong>DevTools (Chrome/Edge):</strong> Inspeção do DOM, validação de responsividade nos breakpoints de Smartphone e Desktop, e testes da chave LocalStorage.</li>
+            <li><strong>W3C Validators:</strong> Checagem de conformidade semântica HTML5 e regras CSS3 (<a href="https://validator.w3.org/" target="_blank">W3C Validator</a>).</li>
+            <li><strong>Git e GitHub:</strong> Controle de versão e publicação pública (<a href="https://github.com/" target="_blank">GitHub</a>).</li>
+        </ul>
+
+        <h2>3. Linguagens e Tecnologias Empregadas</h2>
+        <table>
+            <thead><tr><th>Tecnologia</th><th>Versão</th><th>Aplicação no Projeto</th></tr></thead>
+            <tbody>
+                <tr><td><strong>HTML5 Semântico</strong></td><td>W3C</td><td>Tags estruturais: &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;footer&gt;, &lt;figure&gt;.</td></tr>
+                <tr><td><strong>CSS3 Avançado</strong></td><td>Nível 3</td><td>Seletores TAG, CLASSE e ID nos 3 escopos (externo, incorporado e em linha), CSS Grid, Flexbox, Dark Mode e variáveis :root.</td></tr>
+                <tr><td><strong>JavaScript Vanilla</strong></td><td>ES6+</td><td>Manipulação dinâmica do DOM sem bibliotecas, validações, cálculos de indicadores e CRUD em localStorage.</td></tr>
+                <tr><td><strong>Bootstrap</strong></td><td>v5.3.3 Local</td><td>Classes utilitárias de grid, cards, botões e alertas armazenadas na pasta css/ e js/ para funcionamento offline.</td></tr>
+                <tr><td><strong>Bootstrap Icons</strong></td><td>v1.11.3 Local</td><td>Ícones vetoriais com fontes WOFF2 embutidas localmente em css/fonts/.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>4. Sites de Referência e Inspiração</h2>
+        <ul>
+            <li><strong>IPHAN:</strong> Consulta histórica sobre o Boi de Parintins, Viola de Cocho, Frevo e Carimbó (<a href="http://portal.iphan.gov.br/" target="_blank">portal.iphan.gov.br</a>).</li>
+            <li><strong>Ministério do Turismo:</strong> Roteiros de ecoturismo e gastronomia (<a href="https://www.gov.br/turismo/pt-br" target="_blank">gov.br/turismo</a>).</li>
+            <li><strong>IBGE Educa:</strong> Dados oficiais sobre população, biomas e área territorial (<a href="https://educa.ibge.gov.br/" target="_blank">educa.ibge.gov.br</a>).</li>
+            <li><strong>MDN Web Docs:</strong> API de LocalStorage, seletores DOM e mídia nativa (<a href="https://developer.mozilla.org/pt-BR/" target="_blank">developer.mozilla.org</a>).</li>
+        </ul>
+
+        <h2>5. Divisão de Tarefas entre os Integrantes (2 Alunos)</h2>
+        <table>
+            <thead><tr><th>Aluno</th><th>Responsabilidades e Entregas</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Arthur</strong></td><td>Estrutura de diretórios raiz, páginas index.html, norte.html, nordeste.html, centro-oeste.html, sudeste.html, sul.html, lógica de LocalStorage no script.js, integração de áudio/vídeo e empacotamento offline do Bootstrap.</td></tr>
+                <tr><td><strong>Integrante da Equipe</strong></td><td>Módulo Vanilla Puro sem bibliotecas (estatisticas.html e sobre.html com puro.css e puro.js), tabela 6x5, formulário com validações nativas em contato.html, estudos de UX/UI, Heurísticas de Nielsen e documentação acadêmica.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>6. Dificuldades Encontradas e Soluções Adotadas</h2>
+        <ul>
+            <li><strong>Execução Offline sem Internet:</strong> CDNs foram substituídos por arquivos locais de bootstrap.min.css, bootstrap.bundle.min.js e bootstrap-icons.min.css com fontes WOFF2.</li>
+            <li><strong>Exigência de 2 páginas 100% puras:</strong> Foram criadas estatisticas.html e sobre.html sem nenhum link de Bootstrap, gerando puro.css e puro.js do zero.</li>
+            <li><strong>Persistência de Objetos no LocalStorage:</strong> Uso de JSON.stringify() e JSON.parse() com fallback e tratamento de erros.</li>
+            <li><strong>Regra sem comentários:</strong> Código escrito com nomes de variáveis e funções altamente semânticos e autoexplicativos.</li>
+        </ul>
+        <div class="page-break"></div>
+        <h2>7. Estudo da Experiência do Usuário (UX)</h2>
+        <p>A experiência do usuário foi elaborada para ser imersiva e responsiva: identificação personalizada com saudação em todas as páginas, contador de explorações que reage às ações do visitante, navegação inter-regional guiada (passo a passo) e suporte contínuo a Modo Claro e Modo Escuro com salvamento no navegador.</p>
+
+        <h2>8. Estudo sobre a Interface do Usuário (UI)</h2>
+        <p>A UI utiliza cards com elevação sutil (hover translateY), paleta inspirada na biodiversidade brasileira, bordas de acento cromático diferenciadas para cada uma das cinco regiões, transições CSS de 0.25s e layout em CSS Grid e Flexbox.</p>
+
+        <h2>9. Estudo e Aplicação das 10 Heurísticas de Usabilidade de Nielsen</h2>
+        <table>
+            <thead><tr><th>Heurística</th><th>Implementação no CulturaBrasil</th></tr></thead>
+            <tbody>
+                <tr><td><strong>1. Visibilidade do Status</strong></td><td>Contador de explorações dinâmico e status textual da reprodução de áudio e vídeo.</td></tr>
+                <tr><td><strong>2. Correspondência com o Mundo Real</strong></td><td>Vocabulário cultural autêntico (Tacacá, Fandango, Frevo) e metáfora de "Diário de Bordo".</td></tr>
+                <tr><td><strong>3. Controle e Liberdade</strong></td><td>Opção de trocar ou apagar o nome cadastrado, zerar o contador e editar/excluir anotações.</td></tr>
+                <tr><td><strong>4. Consistência e Padrões</strong></td><td>Estrutura padronizada em todas as 11 páginas com cabeçalho, container responsivo e rodapé.</td></tr>
+                <tr><td><strong>5. Prevenção de Erros</strong></td><td>Validações nativas com required, minlength e pattern impedindo envios em branco.</td></tr>
+                <tr><td><strong>6. Reconhecimento em vez de Memorização</strong></td><td>Breadcrumbs de localização e cards com fotos e descrições diretas.</td></tr>
+                <tr><td><strong>7. Flexibilidade e Eficiência</strong></td><td>Acesso às páginas tanto por menu dropdown, cards na home e navegação rápida no rodapé.</td></tr>
+                <tr><td><strong>8. Estética Minimalista</strong></td><td>Ausência de poluição visual, boa respiração dos elementos e tipografia equilibrada.</td></tr>
+                <tr><td><strong>9. Ajuda e Reconhecimento de Erros</strong></td><td>Feedback visual imediato nas pseudo-classes :invalid e avisos orientadores.</td></tr>
+                <tr><td><strong>10. Ajuda e Documentação</strong></td><td>Página sobre.html detalhada e manual acadêmico na pasta doc/.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>10. Escolha da Paleta de Cores e Acessibilidade (WCAG)</h2>
+        <div class="color-palette-box">
+            <div class="color-swatch" style="background-color: #0b6e4f;">Verde Floresta<br>#0b6e4f (Primária)</div>
+            <div class="color-swatch" style="background-color: #e3a018; color: #1a1a1a;">Ouro Solar<br>#e3a018 (Secundária)</div>
+            <div class="color-swatch" style="background-color: #1d7874;">Azul Petróleo<br>#1d7874 (Acento)</div>
+            <div class="color-swatch" style="background-color: #1f2937;">Grafite Escuro<br>#1f2937 (Texto)</div>
+            <div class="color-swatch" style="background-color: #f4f6f8; color: #1a1a1a; border: 1px solid #ccc;">Cinza Neve<br>#f4f6f8 (Fundo Claro)</div>
+            <div class="color-swatch" style="background-color: #0f1416;">Preto Ébano<br>#0f1416 (Fundo Escuro)</div>
+        </div>
+        <p>A relação de contraste entre texto e fundo atende aos índices da WCAG 2.1 nível AA (&ge; 4.5:1), garantindo conforto para pessoas com baixa visão.</p>
+
+        <h2>11. Escolha da Tipografia e Escala Visual</h2>
+        <p>Utilização da <em>System UI Font Stack</em> nativa (system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif), eliminando requisições externas para permitir funcionamento offline instantâneo, com hierarquia clara de h1 (2.2rem a 2.75rem), h2 a h5 e line-height de 1.6.</p>
+
+        <h2>12. Mapa do Site (Sitemap)</h2>
+        <div class="code-block">
+[index.html] Portal CulturaBrasil
+ ├── [norte.html] Região Norte (Amazonas, Pará, Parintins, Círio, Culinária)
+ ├── [nordeste.html] Região Nordeste (Frevo, Maracatu, São João, Cordel)
+ ├── [centro-oeste.html] Região Centro-Oeste (Pantanal, Viola de Cocho, Cavalhadas)
+ ├── [sudeste.html] Região Sudeste (Samba, Barroco Mineiro, Bossa Nova)
+ ├── [sul.html] Região Sul (Tradição Gaúcha, Imigração Europeia, Fandango)
+ ├── [diario.html] Diário de Bordo Cultural (CRUD completo com LocalStorage)
+ ├── [galeria.html] Galeria Multimídia (CSS Grid Layout, Vídeo e Áudio Nativos)
+ ├── [contato.html] Fale Conosco (Formulário com validações nativas e :focus/:hover/:invalid)
+ ├── [estatisticas.html] Módulo Vanilla 1 (Tabela 6x5 e cálculos dinâmicos sem Bootstrap)
+ └── [sobre.html] Módulo Vanilla 2 (Memorial acadêmico e arquitetura sem Bootstrap)
+        </div>
+
+        <h2>13. Catálogo das 11 Telas Desenvolvidas e Responsividade</h2>
+        <table>
+            <thead><tr><th>Arquivo</th><th>Página</th><th>Tecnologia</th><th>Responsividade (Desktop x Smartphone)</th></tr></thead>
+            <tbody>
+                <tr><td><code>index.html</code></td><td>Portal Geral</td><td>Bootstrap + Custom</td><td>Hero fluido; grade de 3 cards vira 1 coluna no celular.</td></tr>
+                <tr><td><code>norte.html</code></td><td>Região Norte</td><td>Bootstrap + Custom</td><td>Tradições e pratos adaptáveis com flexbox wrap.</td></tr>
+                <tr><td><code>nordeste.html</code></td><td>Região Nordeste</td><td>Bootstrap + Custom</td><td>Menu hambúrguer móvel e cards com alinhamento vertical.</td></tr>
+                <tr><td><code>centro-oeste.html</code></td><td>Região Centro-Oeste</td><td>Bootstrap + Custom</td><td>Apresentação pantaneira fluida e botões adaptados.</td></tr>
+                <tr><td><code>sudeste.html</code></td><td>Região Sudeste</td><td>Bootstrap + Custom</td><td>Navegação anterior/próxima empilhada no celular.</td></tr>
+                <tr><td><code>sul.html</code></td><td>Região Sul</td><td>Bootstrap + Custom</td><td>Cards de tradições do campo com margens fluidas.</td></tr>
+                <tr><td><code>diario.html</code></td><td>Diário de Bordo</td><td>Bootstrap + LocalStorage</td><td>Formulário lateral e tabela responsiva com rolagem.</td></tr>
+                <tr><td><code>galeria.html</code></td><td>Galeria & Mídia</td><td>CSS Grid + Mídia Nativa</td><td>Grade CSS 3 colunas em desktop e 1 coluna em celular.</td></tr>
+                <tr><td><code>contato.html</code></td><td>Contato & Feedback</td><td>Bootstrap + Validações</td><td>Campos com 100% de largura no mobile e estados visuais.</td></tr>
+                <tr><td><code>estatisticas.html</code></td><td>Estatísticas Regionais</td><td>100% Vanilla Puro</td><td>Tabela 6x5 em wrapper overflow-x e métricas em grid nativo.</td></tr>
+                <tr><td><code>sobre.html</code></td><td>Sobre o Projeto</td><td>100% Vanilla Puro</td><td>Diagrama de pastas e tarefas em layout CSS puro.</td></tr>
+            </tbody>
+        </table>
+        <div class="page-break"></div>
+        <h2>14. Aplicações de JavaScript Puro e as 4 Estruturas Básicas</h2>
+        <p>O JavaScript do projeto foi desenvolvido com código nativo (Vanilla JS), contemplando obrigatoriamente as 4 estruturas:</p>
+        <ul>
+            <li><strong>Sequencial:</strong> Atribuições sequenciais, leitura do DOM e manipulação de propriedades (ex: <code>el.textContent = total.toString()</code>).</li>
+            <li><strong>Condicional:</strong> Decisões com <code>if / else</code> na validação de inputs e <code>switch</code> na atribuição de cores de badges regionais.</li>
+            <li><strong>Repetição:</strong> Laço <code>for</code> tradicional iterando pelo array de dados para filtros e <code>forEach</code> construindo as linhas da tabela no DOM.</li>
+            <li><strong>Estruturas de Dados:</strong> Arrays de Objetos multidimensionais contendo dados demográficos e anotações com persistência em <code>localStorage</code>.</li>
+        </ul>
+
+        <h2>15. Guia Completo para Apresentação e Defesa Oral do Código</h2>
+        <p>Roteiro prático para os dois alunos conduzirem a apresentação perante o <strong>Prof. Fabricio Olivo</strong>:</p>
+
+        <div class="defense-card">
+            <div class="defense-question">Passo 1: Introdução e Teste Offline (Arthur - 2 minutos)</div>
+            <div class="defense-answer">
+                <em>"Professor Fabricio, nosso portal CulturaBrasil reúne as 5 regiões do país em 11 páginas navegáveis. Para demonstrar a confiabilidade da nossa solução, estamos executando o projeto com o navegador em modo offline diretamente a partir de index.html, comprovando que estilos, ícones locais, scripts e mídias funcionam sem internet."</em>
+            </div>
+        </div>
+
+        <div class="defense-card">
+            <div class="defense-question">Passo 2: HTML5 Semântico e os 3 Níveis de Escopo CSS (Integrante - 2 minutos)</div>
+            <div class="defense-answer">
+                <em>"Todas as telas empregam comandos do HTML5 semântico (&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt;). O CSS3 foi aplicado nos três níveis de escopo: externo (styles.css e puro.css), incorporado (tags &lt;style&gt; no head) e em linha (style="" nos elementos). Além disso, utilizamos seletores do tipo TAG, CLASSE e IDENTIDADE (#id)."</em>
+            </div>
+        </div>
+
+        <div class="defense-card">
+            <div class="defense-question">Passo 3: Módulo Vanilla Puro e Tabela 6x5 (Integrante - 3 minutos)</div>
+            <div class="defense-answer">
+                <em>"Para atender ao item 4 do edital, as páginas estatisticas.html e sobre.html foram criadas 100% puras, sem nenhuma biblioteca ou framework como Bootstrap. Na tela de estatísticas demonstramos uma tabela 6x5 com títulos &lt;th&gt;, superando o requisito de 4x4, com filtros e cálculos em tempo real que exemplificam sequencial, condicional, repetição e dados no JS."</em>
+            </div>
+        </div>
+
+        <div class="defense-card">
+            <div class="defense-question">Passo 4: LocalStorage, Diário de Bordo e Validações Nativas (Arthur - 3 minutos)</div>
+            <div class="defense-answer">
+                <em>"No diário.html implementamos um CRUD completo com LocalStorage usando JSON.stringify e JSON.parse. Os dados permanecem gravados após atualizar (F5) ou fechar o navegador. E em contato.html, atendemos aos itens 13, 14 e 15 com formulário semântico, validações required/pattern e estilização dos estados :focus, :hover e :invalid."</em>
+            </div>
+        </div>
+
+        <div class="defense-card">
+            <div class="defense-question">Passo 5: CSS Grid e Mídia Nativa (Ambos - 2 minutos)</div>
+            <div class="defense-answer">
+                <em>"Em galeria.html aplicamos CSS Grid Layout (display: grid e repeat auto-fit) para organização de cards e inserimos players de vídeo (&lt;video controls&gt;) e áudio (&lt;audio controls&gt;) nativos do HTML5 reproduzindo arquivos locais na pasta video/ e audio/."</em>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h2>16. Banco de Perguntas e Respostas da Banca</h2>
+
+        <div class="defense-card">
+            <div class="defense-question">1. Onde vocês aplicaram os três níveis de escopo do CSS e por quê?</div>
+            <div class="defense-answer">
+                <em>"Externo nos arquivos css/styles.css e css/puro.css para regras globais; Incorporado na tag &lt;style&gt; no &lt;head&gt; de cada tela para especificidades locais (como bordas coloridas regionais); e Em Linha via atributo style="" para regras pontuais de largura e gradientes. Isso demonstra o domínio sobre a cascata e especificidade do CSS."</em>
+            </div>
+        </div>
+
+        <div class="defense-card">
+            <div class="defense-question">2. Como funciona o LocalStorage e como evitaram perda de dados?</div>
+            <div class="defense-answer">
+                <em>"O localStorage guarda pares string-string no navegador do cliente. Usamos JSON.stringify para transformar o array de objetos do diário e contatos em string antes de gravar, e JSON.parse ao carregar a página. Com isso, os dados nunca são perdidos ao fechar a janela."</em>
+            </div>
+        </div>
+
+        <div class="defense-card">
+            <div class="defense-question">3. Onde estão as 4 estruturas básicas de programação no JavaScript?</div>
+            <div class="defense-answer">
+                <em>"A Sequencial está na atribuição e leitura do DOM e contadores. A Condicional está nos if/else de busca e switch de regiões. A Repetição está nos laços for e forEach para renderizar linhas da tabela. A de Dados está no Array de Objetos com os dados oficiais do IBGE e do diário."</em>
+            </div>
+        </div>
+
+        <div class="defense-card">
+            <div class="defense-question">4. Por que não há comentários no meio das funções do JavaScript?</div>
+            <div class="defense-answer">
+                <em>"Cumprimos rigorosamente a determinação do slide 6 do edital: 'Comentários de código só serão permitidos no cabeçalho do arquivo, sendo proibido o uso de comentários ao longo do script'. Adotamos código limpo e nomes autoexplicativos."</em>
+            </div>
+        </div>
+
+        <h2>17. Referências Bibliográficas (Normas ABNT)</h2>
+        <ul style="font-size: 0.9rem; line-height: 1.6;">
+            <li>BERTAGNOLLI, S.; MILETTO, E. M. (org.). <strong>Desenvolvimento de software II: introdução ao desenvolvimento web com HTML, CSS, JavaScript e PHP</strong>. Porto Alegre: Bookman, 2014.</li>
+            <li>FLATSCHART, F. <strong>HTML 5: embarque imediato</strong>. Rio de Janeiro: Brasport, 2011.</li>
+            <li>HAROLD, E. R. <strong>Refatorando HTML: como melhorar o projeto de aplicações web existentes</strong>. Porto Alegre: Bookman, 2010.</li>
+            <li>HORSTMANN, C. <strong>Conceitos de computação com Java</strong>. 5. ed. Porto Alegre: Bookman, 2009.</li>
+            <li>KALBACH, J. <strong>Design de navegação web: otimizando a experiência do usuário</strong>. Porto Alegre: Bookman, 2009.</li>
+            <li>MACHADO, R. P.; FRANCO, M. H. I.; BERTAGNOLLI, S. C. <strong>Desenvolvimento de software III: programação de sistemas web orientada a objetos em Java</strong>. Porto Alegre: Bookman, 2016.</li>
+            <li>SANDERS, B. <strong>Smashing HTML5: técnicas para a nova geração da web</strong>. Porto Alegre: Bookman, 2012.</li>
+            <li>TERUEL, E. C. <strong>HTML5: guia prático</strong>. 2. ed. São Paulo: Érica, 2014.</li>
+            <li>W3C. <strong>HTML5 & CSS3 Recommendations</strong>. Disponível em: &lt;https://www.w3.org/&gt;. Acesso em: out. 2026.</li>
+        </ul>
+    </div>
+</body>
+</html>
