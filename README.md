@@ -14,6 +14,7 @@ Nordeste	Frevo, maracatu, São João, cordel
 Centro-Oeste	Pantanal, Viola de Cocho, Cavalhadas de Pirenópolis, arroz com pequi
 Sudeste	Samba carioca, cidades históricas de Minas Gerais, gastronomia caipira e caiçara
 Sul	Cultura gaúcha, chimarrão, festas de imigração alemã e italiana, barreado
+
 ✨ Funcionalidades
 Navegação responsiva com Bootstrap (menu com dropdown de regiões)
 Personalização do visitante com nome salvo no LocalStorage
@@ -26,8 +27,9 @@ Duas páginas em HTML5/CSS3 puro, sem frameworks: Estatísticas (tabela) e Sobre
 Página de contato
 Links externos de referência (W3C, IPHAN, Ministério do Turismo, IBGE Educa)
 Funciona 100% offline, pois o Bootstrap e os ícones estão incluídos localmente
+
 🛠️ Tecnologias
 HTML5
 CSS3
-JavaScript (puro)
+JavaScript 
 Bootstrap 5 e Bootstrap Icons (arquivos locais)
