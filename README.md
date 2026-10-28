@@ -16,6 +16,7 @@ Sudeste	Samba carioca, cidades históricas de Minas Gerais, gastronomia caipira 
 Sul	Cultura gaúcha, chimarrão, festas de imigração alemã e italiana, barreado
 
 ✨ Funcionalidades
+
 Navegação responsiva com Bootstrap (menu com dropdown de regiões)
 Personalização do visitante com nome salvo no LocalStorage
 Contador interativo de explorações, também persistido no navegador
